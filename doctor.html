@@ -15,154 +15,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
-        html {
-            font-size: 20px;
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Belleza', sans-serif;
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 0 20px;
-            line-height: 1.7;
-            color: #5c815b;
-            background-color: #f7faf5;
-        }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 0;
-            border-bottom: 1px solid #e0e0e0;
-            margin-bottom: 30px;
-        }
-        .logo-container {
-            margin-bottom: 20px;
-        }
-        .logo {
-            height: 110px;
-            width: auto;
-            max-height: 130px;
-        }
-        nav {
-            text-align: center;
-            position: relative;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #5c815b;
-            font-weight: 500;
-            font-family: 'Belleza', sans-serif;
-            transition: all 0.2s ease;
-        }
-        nav a:hover {
-            text-decoration: underline;
-            transform: translateY(-1px);
-        }
-        nav a.active {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #5c815b;
-            font-family: 'Belleza', sans-serif;
-            padding: 0 10px;
-            line-height: 1;
-        }
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                margin-top: 10px;
-            }
-            nav .nav-links.active {
-                display: flex;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-                font-size: 1.1rem;
-            }
-        }
-        h1, h2 {
-            font-family: 'Belleza', sans-serif;
-            color: #5c815b;
-        }
-        h1 {
-            font-size: 2.5rem;
-            line-height: 1.3;
-            margin-top: 0;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .profile-pic {
-            float: right;
-            margin: 0 0 20px 20px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(92,129,91,0.15);
-        }
-        /* Clearfix for the float to prevent layout issues */
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e0e0e0;
-            text-align: center;
-            font-size: 0.9em;
-            color: #5c815b;
-            font-family: 'Belleza', sans-serif;
-        }
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #5c815b;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            z-index: 999;
-            font-family: 'Belleza', sans-serif;
-            line-height: 1;
-        }
+        html { font-size: 20px; scroll-behavior: smooth; }
+        body { font-family: 'Belleza', sans-serif; max-width: 850px; margin: 0 auto; padding: 0 20px; line-height: 1.7; color: #5c815b; background-color: #f7faf5; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f7faf5; } ::-webkit-scrollbar-thumb { background: #5c815b; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover { background: #4a6e49; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #5c815b; color: #fff; padding: 8px 12px; z-index: 100; transition: top 0.3s; } .skip-link:focus { top: 0; }
+        header { position: sticky; top: 0; background: #f7faf5; z-index: 10; display: flex; flex-direction: column; align-items: center; padding: 20px 0 15px; border-bottom: 1px solid #e0e0e0; box-shadow: 0 2px 6px rgba(92,129,91,0.06); margin-bottom: 30px; }
+        .logo-container { margin-bottom: 15px; } .logo { height: 110px; width: auto; max-height: 130px; }
+        nav { text-align: center; position: relative; } nav a { margin: 0 15px; text-decoration: none; color: #5c815b; font-weight: 500; font-family: 'Belleza', sans-serif; transition: all 0.2s ease; } nav a:hover { text-decoration: underline; transform: translateY(-1px); } nav a.active { font-weight: bold; text-decoration: underline; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: #5c815b; font-family: 'Belleza', sans-serif; padding: 0 10px; line-height: 1; transition: transform 0.3s ease; } .menu-toggle.open { transform: rotate(90deg); }
+        @media (max-width: 768px) { .menu-toggle { display: block; } nav .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 10px; } nav .nav-links.active { display: flex; } nav a { display: block; margin: 10px 0; font-size: 1.1rem; } }
+        h1, h2 { font-family: 'Belleza', sans-serif; color: #5c815b; } h1 { font-size: 2.5rem; line-height: 1.3; margin-top: 0; } h2 { font-size: 1.5rem; margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        ul { padding-left: 20px; }
+        .profile-pic { float: right; margin: 0 0 20px 20px; width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(92,129,91,0.15); }
+        .clearfix::after { content: ""; display: table; clear: both; }
+        footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #e0e0e0; text-align: center; font-size: 0.9em; color: #5c815b; font-family: 'Belleza', sans-serif; }
+        #backToTop { display: none; position: fixed; bottom: 30px; right: 30px; background: #5c815b; color: #fff; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 1.5rem; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); z-index: 999; font-family: 'Belleza', sans-serif; line-height: 1; transition: transform 0.2s; } #backToTop:active { transform: scale(0.95); }
+        @media print { header, footer, #backToTop, .menu-toggle, .skip-link { display: none; } body { font-size: 16px; color: #000; } }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Muna Clinic Logo" class="logo" loading="lazy">
-            </a>
-        </div>
+        <div class="logo-container"><a href="index.html"><img src="images/logo.png" alt="Muna Clinic Logo" class="logo" loading="lazy"></a></div>
         <nav>
             <button class="menu-toggle" onclick="toggleMenu()">+</button>
             <div class="nav-links" id="navLinks">
@@ -175,78 +49,39 @@
             </div>
         </nav>
     </header>
-
-    <main class="clearfix">
+    <main id="main-content" class="clearfix">
         <h1>Dr. Abhigya Parajuli</h1>
-
-        <!-- Profile photo – floats right with text wrapped -->
         <img src="images/profile.jpg" alt="Dr. Abhigya Parajuli" class="profile-pic" loading="lazy">
-
-        <p>I've been called “Muna” since I can remember — a nickname my family gave me in childhood that somehow never left. It’s a name that reminds me where I come from, and it’s the name I chose for the clinic that will one day be my professional home.</p>
+        <p>I’ve been called “Muna” since I can remember — a nickname my family gave me in childhood that somehow never left. It’s a name that reminds me where I come from, and it’s the name I chose for the clinic that will one day be my professional home.</p>
         <p>I completed my MBBS at Gandaki Medical College, Pokhara, graduating with first division and completing a one-year rotating internship across General Surgery, Neurosurgery, Internal Medicine, Emergency, Obstetrics &amp; Gynaecology, Paediatrics, and Orthopaedics. During that year, I learned to suture, place catheters and NG tubes, assist in major surgeries, and — more importantly — to stay calm and think clearly when minutes matter.</p>
         <p>That pull toward acute care led me to pursue an <strong>MD in General Practice &amp; Emergency Medicine at BP Koirala Institute of Health Sciences</strong>, which I began in March 2026. Emergency medicine, to me, is the intersection of skill and empathy: knowing what to do and being present for the person in front of you.</p>
-        <p>Beyond the wards, I've developed a love for research and academic writing. I served as an editorial assistant for the Journal of Gandaki Medical College, published on medical education during COVID-19, and have a manuscript under review on a rare surgical presentation. I’ve also been involved in health camps, global health volunteering, and organizing medical webinars — activities that keep me connected to the bigger picture of public health.</p>
+        <p>Beyond the wards, I’ve developed a love for research and academic writing. I served as an editorial assistant for the Journal of Gandaki Medical College, published on medical education during COVID-19, and have a manuscript under review on a rare surgical presentation. I’ve also been involved in health camps, global health volunteering, and organizing medical webinars — activities that keep me connected to the bigger picture of public health.</p>
         <p>Outside medicine, I’m a believer in community, clear communication, and the power of a simple explanation. That’s what this website is about, and what Muna Clinic will stand for.</p>
-
         <h2>Current Position</h2>
-        <ul>
-            <li><strong>MD Resident</strong>, General Practice &amp; Emergency Medicine, BP Koirala Institute of Health Sciences (March 2026 – present)</li>
-            <li><strong>Founder</strong>, Muna Clinic Private Limited, Pokhara</li>
-        </ul>
-
+        <ul><li><strong>MD Resident</strong>, General Practice &amp; Emergency Medicine, BP Koirala Institute of Health Sciences (March 2026 – present)</li><li><strong>Founder</strong>, Muna Clinic Private Limited, Pokhara</li></ul>
         <h2>Education</h2>
-        <ul>
-            <li><strong>MBBS</strong> — Gandaki Medical College, Pokhara (2018–2025) | First Division (68.48%)</li>
-            <li><strong>NEB +2</strong> — Capital Secondary School, Kathmandu (2017) | 82.6%</li>
-            <li><strong>S.L.C.</strong> — Gandaki Boarding School, Pokhara (2015) | 91.25%</li>
-        </ul>
-
+        <ul><li><strong>MBBS</strong> — Gandaki Medical College, Pokhara (2018–2025) | First Division (68.48%)</li><li><strong>NEB +2</strong> — Capital Secondary School, Kathmandu (2017) | 82.6%</li><li><strong>S.L.C.</strong> — Gandaki Boarding School, Pokhara (2015) | 91.25%</li></ul>
         <h2>Clinical Internship</h2>
-        <p><em>Gandaki Medical College (August 2024 – August 2025)</em><br>
-        Rotations: General Surgery, Neurosurgery, Internal Medicine, Obstetrics &amp; Gynaecology, Emergency, Paediatrics, Orthopaedics</p>
-        <ul>
-            <li>Comprehensive patient care across specialties</li>
-            <li>Minor procedures: suturing, wound dressing, NG tube insertion, Foley’s catheterization</li>
-            <li>Assisted in major surgeries: appendectomy, hernioplasty, decompressive craniectomy</li>
-            <li>Emergency response: CPR, IV access, trauma stabilization</li>
-            <li>Multidisciplinary teamwork, case presentations, electronic medical records</li>
-        </ul>
-
+        <p><em>Gandaki Medical College (August 2024 – August 2025)</em><br>Rotations: General Surgery, Neurosurgery, Internal Medicine, Obstetrics &amp; Gynaecology, Emergency, Paediatrics, Orthopaedics</p>
+        <ul><li>Comprehensive patient care across specialties</li><li>Minor procedures: suturing, wound dressing, NG tube insertion, Foley’s catheterization</li><li>Assisted in major surgeries: appendectomy, hernioplasty, decompressive craniectomy</li><li>Emergency response: CPR, IV access, trauma stabilization</li><li>Multidisciplinary teamwork, case presentations, electronic medical records</li></ul>
         <h2>Core Competencies</h2>
-        <ul>
-            <li>History-taking, clinical evaluation, differential diagnosis</li>
-            <li>Emergency resuscitation protocols</li>
-            <li>Procedures: IV access, ABG sampling, thoracocentesis, paracentesis, POP/cast application</li>
-            <li>Interpretation of ECG, X-ray, ABG, basic lab values</li>
-            <li>Patient communication, team collaboration, research writing</li>
-        </ul>
-
+        <ul><li>History-taking, clinical evaluation, differential diagnosis</li><li>Emergency resuscitation protocols</li><li>Procedures: IV access, ABG sampling, thoracocentesis, paracentesis, POP/cast application</li><li>Interpretation of ECG, X-ray, ABG, basic lab values</li><li>Patient communication, team collaboration, research writing</li></ul>
         <h2>Licensure</h2>
-        <ul>
-            <li><strong>Registered Doctor</strong> — Nepal Medical Council | Reg. No. 39343</li>
-        </ul>
+        <ul><li><strong>Registered Doctor</strong> — Nepal Medical Council | Reg. No. 39343</li></ul>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Muna Clinic Private Limited</p>
-    </footer>
-
+    <footer><p>&copy; 2026 Muna Clinic Private Limited</p></footer>
     <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
     <script>
         function toggleMenu() {
             var nav = document.getElementById("navLinks");
             nav.classList.toggle("active");
             var btn = document.querySelector(".menu-toggle");
             btn.textContent = nav.classList.contains("active") ? "✕" : "+";
+            btn.classList.toggle("open");
         }
         window.onscroll = function() {
             var btn = document.getElementById('backToTop');
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                btn.style.display = 'block';
-            } else {
-                btn.style.display = 'none';
-            }
+            btn.style.display = (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) ? 'block' : 'none';
         };
     </script>
 </body>
