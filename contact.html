@@ -15,131 +15,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
-        html {
-            font-size: 20px;
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Belleza', sans-serif;
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 0 20px;
-            line-height: 1.7;
-            color: #5c815b;
-            background-color: #f7faf5;
-        }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 0;
-            border-bottom: 1px solid #e0e0e0;
-            margin-bottom: 30px;
-        }
-        .logo-container {
-            margin-bottom: 20px;
-        }
-        .logo {
-            height: 110px;
-            width: auto;
-            max-height: 130px;
-        }
-        nav {
-            text-align: center;
-            position: relative;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #5c815b;
-            font-weight: 500;
-            font-family: 'Belleza', sans-serif;
-            transition: all 0.2s ease;
-        }
-        nav a:hover {
-            text-decoration: underline;
-            transform: translateY(-1px);
-        }
-        nav a.active {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #5c815b;
-            font-family: 'Belleza', sans-serif;
-            padding: 0 10px;
-            line-height: 1;
-        }
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                margin-top: 10px;
-            }
-            nav .nav-links.active {
-                display: flex;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-                font-size: 1.1rem;
-            }
-        }
-        h1 {
-            font-family: 'Belleza', sans-serif;
-            color: #5c815b;
-            font-size: 2.5rem;
-            line-height: 1.3;
-            margin-top: 0;
-        }
-        .contact-info {
-            margin-top: 20px;
-        }
-        footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e0e0e0;
-            text-align: center;
-            font-size: 0.9em;
-            color: #5c815b;
-            font-family: 'Belleza', sans-serif;
-        }
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #5c815b;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            z-index: 999;
-            font-family: 'Belleza', sans-serif;
-            line-height: 1;
-        }
+        html { font-size: 20px; scroll-behavior: smooth; }
+        body { font-family: 'Belleza', sans-serif; max-width: 850px; margin: 0 auto; padding: 0 20px; line-height: 1.7; color: #5c815b; background-color: #f7faf5; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f7faf5; } ::-webkit-scrollbar-thumb { background: #5c815b; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover { background: #4a6e49; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #5c815b; color: #fff; padding: 8px 12px; z-index: 100; transition: top 0.3s; } .skip-link:focus { top: 0; }
+        header { position: sticky; top: 0; background: #f7faf5; z-index: 10; display: flex; flex-direction: column; align-items: center; padding: 20px 0 15px; border-bottom: 1px solid #e0e0e0; box-shadow: 0 2px 6px rgba(92,129,91,0.06); margin-bottom: 30px; }
+        .logo-container { margin-bottom: 15px; } .logo { height: 110px; width: auto; max-height: 130px; }
+        nav { text-align: center; position: relative; } nav a { margin: 0 15px; text-decoration: none; color: #5c815b; font-weight: 500; font-family: 'Belleza', sans-serif; transition: all 0.2s ease; } nav a:hover { text-decoration: underline; transform: translateY(-1px); } nav a.active { font-weight: bold; text-decoration: underline; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: #5c815b; font-family: 'Belleza', sans-serif; padding: 0 10px; line-height: 1; transition: transform 0.3s ease; } .menu-toggle.open { transform: rotate(90deg); }
+        @media (max-width: 768px) { .menu-toggle { display: block; } nav .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 10px; } nav .nav-links.active { display: flex; } nav a { display: block; margin: 10px 0; font-size: 1.1rem; } }
+        h1 { font-family: 'Belleza', sans-serif; color: #5c815b; font-size: 2.5rem; line-height: 1.3; margin-top: 0; }
+        .contact-info { margin-top: 20px; }
+        footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #e0e0e0; text-align: center; font-size: 0.9em; color: #5c815b; font-family: 'Belleza', sans-serif; }
+        #backToTop { display: none; position: fixed; bottom: 30px; right: 30px; background: #5c815b; color: #fff; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 1.5rem; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); z-index: 999; font-family: 'Belleza', sans-serif; line-height: 1; transition: transform 0.2s; } #backToTop:active { transform: scale(0.95); }
+        @media print { header, footer, #backToTop, .menu-toggle, .skip-link { display: none; } body { font-size: 16px; color: #000; } }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Muna Clinic Logo" class="logo" loading="lazy">
-            </a>
-        </div>
+        <div class="logo-container"><a href="index.html"><img src="images/logo.png" alt="Muna Clinic Logo" class="logo" loading="lazy"></a></div>
         <nav>
             <button class="menu-toggle" onclick="toggleMenu()">+</button>
             <div class="nav-links" id="navLinks">
@@ -152,39 +47,29 @@
             </div>
         </nav>
     </header>
-
-    <main>
+    <main id="main-content">
         <h1>Contact</h1>
         <p>I’d love to hear from you. Whether you’re interested in collaborating on a health camp, have a question about my research, or just want to say hello, feel free to reach out.</p>
         <div class="contact-info">
             <p><strong>Email:</strong> <a href="mailto:munaclinic@dr.com">munaclinic@dr.com</a></p>
             <p><strong>Phone:</strong> +977-9846046127</p>
-            <p><strong>Registered Office (Muna Clinic):</strong><br>
-            Bindhyabasini-2, Pokhara, Kaski, Gandaki Province, Nepal</p>
+            <p><strong>Registered Office (Muna Clinic):</strong><br>Bindhyabasini-2, Pokhara, Kaski, Gandaki Province, Nepal</p>
         </div>
         <p><em>Please note: Muna Clinic will begin offering appointment-based consultations after my residency. In the meantime, I’m happy to direct you to trusted local healthcare resources if needed.</em></p>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Muna Clinic Private Limited</p>
-    </footer>
-
+    <footer><p>&copy; 2026 Muna Clinic Private Limited</p></footer>
     <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
     <script>
         function toggleMenu() {
             var nav = document.getElementById("navLinks");
             nav.classList.toggle("active");
             var btn = document.querySelector(".menu-toggle");
             btn.textContent = nav.classList.contains("active") ? "✕" : "+";
+            btn.classList.toggle("open");
         }
         window.onscroll = function() {
             var btn = document.getElementById('backToTop');
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                btn.style.display = 'block';
-            } else {
-                btn.style.display = 'none';
-            }
+            btn.style.display = (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) ? 'block' : 'none';
         };
     </script>
 </body>
