@@ -4,86 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Dr. Abhigya Parajuli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
+        html {
+            font-size: 20px;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Belleza', sans-serif;
             max-width: 850px;
             margin: 0 auto;
             padding: 0 20px;
             line-height: 1.7;
-            color: #333;
+            color: #5c815b;
         }
         header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 20px 0;
+            padding: 30px 0;
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 30px;
-            flex-wrap: wrap;
         }
-        .logo-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .logo-container {
+            margin-bottom: 20px;
         }
-        .logo-title img {
-            height: 60px;
+        .logo {
+            height: 100px;
             width: auto;
-            max-height: 80px;
+            max-height: 120px;
         }
-        .site-name {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #222;
-            line-height: 1.2;
-        }
-        .site-name small {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: #555;
+        nav {
+            text-align: center;
         }
         nav a {
-            margin-left: 20px;
+            margin: 0 15px;
             text-decoration: none;
-            color: #0066cc;
+            color: #5c815b;
             font-weight: 500;
+            font-family: 'Belleza', sans-serif;
         }
         nav a:hover {
             text-decoration: underline;
         }
+        h1 {
+            font-family: 'Belleza', sans-serif;
+            color: #5c815b;
+            font-size: 2rem;
+        }
         .contact-info { margin-top: 20px; }
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.9em;
+            color: #5c815b;
+            font-family: 'Belleza', sans-serif;
+        }
         @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            nav {
-                margin-top: 15px;
-                width: 100%;
-            }
             nav a {
-                margin-left: 0;
-                margin-right: 15px;
+                display: block;
+                margin: 5px 0;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-title">
-            <img src="images/logo.png" alt="Muna Clinic Logo">
-            <div class="site-name">
-                Dr. Abhigya Parajuli
-                <small>Muna Clinic Pvt. Ltd.</small>
-            </div>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Muna Clinic Logo" class="logo">
+            </a>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="clinic.html">Muna Clinic</a>
-            <a href="background.html">Background</a>
+            <a href="doctor.html">Doctor</a>
+            <a href="clinic.html">Clinic</a>
             <a href="research.html">Research</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
@@ -94,12 +92,16 @@
         <h1>Contact</h1>
         <p>I’d love to hear from you. Whether you’re interested in collaborating on a health camp, have a question about my research, or just want to say hello, feel free to reach out.</p>
         <div class="contact-info">
-            <p><strong>Email:</strong> <a href="mailto:abhigyaparajuli1@gmail.com">abhigyaparajuli1@gmail.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:munaclinic@hotmail.com">munaclinic@hotmail.com</a></p>
             <p><strong>Phone:</strong> +977-9846046127</p>
             <p><strong>Registered Office (Muna Clinic):</strong><br>
             Bindhyabasini-2, Pokhara, Kaski, Gandaki Province, Nepal</p>
         </div>
         <p><em>Please note: Muna Clinic will begin offering appointment-based consultations after my residency. In the meantime, I’m happy to direct you to trusted local healthcare resources if needed.</em></p>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Dr. Abhigya Parajuli &amp; Muna Clinic Pvt. Ltd.</p>
+    </footer>
 </body>
 </html>
