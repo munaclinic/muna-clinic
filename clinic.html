@@ -134,12 +134,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Dr. Abhigya Parajuli &amp; Muna Clinic Pvt. Ltd.</p>
+        <p>&copy; 2026 Muna Clinic Private Limited</p>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
+            var nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+            var btn = document.querySelector(".menu-toggle");
+            if (nav.classList.contains("active")) {
+                btn.textContent = "✕";
+            } else {
+                btn.textContent = "+";
+            }
         }
     </script>
 </body>
