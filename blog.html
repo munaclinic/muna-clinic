@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muna Clinic</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
-        html {
-            font-size: 20px;
-        }
+        html { font-size: 20px; }
         body {
             font-family: 'Belleza', sans-serif;
             max-width: 850px;
@@ -28,18 +26,9 @@
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 30px;
         }
-        .logo-container {
-            margin-bottom: 20px;
-        }
-        .logo {
-            height: 110px;
-            width: auto;
-            max-height: 130px;
-        }
-        nav {
-            text-align: center;
-            position: relative;
-        }
+        .logo-container { margin-bottom: 20px; }
+        .logo { height: 110px; width: auto; max-height: 130px; }
+        nav { text-align: center; position: relative; }
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -47,9 +36,7 @@
             font-weight: 500;
             font-family: 'Belleza', sans-serif;
         }
-        nav a:hover {
-            text-decoration: underline;
-        }
+        nav a:hover { text-decoration: underline; }
         .menu-toggle {
             display: none;
             background: none;
@@ -62,29 +49,12 @@
             line-height: 1;
         }
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                margin-top: 10px;
-            }
-            nav .nav-links.active {
-                display: flex;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-                font-size: 1.1rem;
-            }
+            .menu-toggle { display: block; }
+            nav .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
+            nav .nav-links.active { display: flex; }
+            nav a { display: block; margin: 10px 0; font-size: 1.1rem; }
         }
-        .post {
-            margin-bottom: 30px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
+        .post { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         .post h2 { margin-bottom: 5px; }
         .post .date { font-size: 0.9em; }
         footer {
@@ -101,9 +71,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Muna Clinic Logo" class="logo">
-            </a>
+            <a href="index.html"><img src="images/logo.png" alt="Muna Clinic Logo" class="logo"></a>
         </div>
         <nav>
             <button class="menu-toggle" onclick="toggleMenu()">+</button>
@@ -122,14 +90,12 @@
         <h1>Blog &amp; Ideas</h1>
         <p>This is where I think out loud. As an MD resident and founder of Muna Clinic, I use this space to share clinical pearls, reflections on residency life in Nepal, healthcare topics explained in plain language, and the journey of building a clinic from scratch.</p>
         <p>New posts will appear here soon. Stay tuned.</p>
-
-        <!-- Example blog post (uncomment and duplicate for new posts) -->
+        <!-- Example post structure (uncomment to use) -->
         <!--
         <div class="post">
-            <h2>The First Lesson of Emergency Medicine: Stay Calm</h2>
-            <p class="date">Posted on April XX, 2026</p>
-            <p>In the chaos of an emergency room, the most radical act is often to pause, take a breath, and think. Here’s what my first few weeks at BPKIHS taught me about composure under pressure…</p>
-            <a href="#">Read more</a>
+            <h2>Post Title</h2>
+            <p class="date">Posted on ...</p>
+            <p>Post content...</p>
         </div>
         -->
     </main>
@@ -143,11 +109,7 @@
             var nav = document.getElementById("navLinks");
             nav.classList.toggle("active");
             var btn = document.querySelector(".menu-toggle");
-            if (nav.classList.contains("active")) {
-                btn.textContent = "✕";
-            } else {
-                btn.textContent = "+";
-            }
+            btn.textContent = nav.classList.contains("active") ? "✕" : "+";
         }
     </script>
 </body>
