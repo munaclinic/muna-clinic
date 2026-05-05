@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muna Clinic</title>
+    <meta name="description" content="Dr. Abhigya Parajuli – MD resident in General Practice & Emergency Medicine, founder of Muna Clinic Private Limited, Pokhara. Learn about his education, clinical experience, and competencies.">
+    <meta property="og:title" content="Muna Clinic – Doctor">
+    <meta property="og:description" content="Dr. Abhigya Parajuli, MD resident and founder of Muna Clinic, Pokhara. Education, clinical background, and competencies.">
+    <meta property="og:image" content="https://munaclinic.com/images/logo.png">
+    <meta property="og:url" content="https://munaclinic.com/doctor.html">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
-        html { font-size: 20px; }
+        html {
+            font-size: 20px;
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Belleza', sans-serif;
             max-width: 850px;
@@ -17,6 +26,7 @@
             padding: 0 20px;
             line-height: 1.7;
             color: #5c815b;
+            background-color: #f7faf5;
         }
         header {
             display: flex;
@@ -26,17 +36,34 @@
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 30px;
         }
-        .logo-container { margin-bottom: 20px; }
-        .logo { height: 110px; width: auto; max-height: 130px; }
-        nav { text-align: center; position: relative; }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo {
+            height: 110px;
+            width: auto;
+            max-height: 130px;
+        }
+        nav {
+            text-align: center;
+            position: relative;
+        }
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: #5c815b;
             font-weight: 500;
             font-family: 'Belleza', sans-serif;
+            transition: all 0.2s ease;
         }
-        nav a:hover { text-decoration: underline; }
+        nav a:hover {
+            text-decoration: underline;
+            transform: translateY(-1px);
+        }
+        nav a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
         .menu-toggle {
             display: none;
             background: none;
@@ -49,15 +76,42 @@
             line-height: 1;
         }
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            nav .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
-            nav .nav-links.active { display: flex; }
-            nav a { display: block; margin: 10px 0; font-size: 1.1rem; }
+            .menu-toggle {
+                display: block;
+            }
+            nav .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+            nav .nav-links.active {
+                display: flex;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 1.1rem;
+            }
         }
-        h1, h2 { font-family: 'Belleza', sans-serif; color: #5c815b; }
-        h1 { font-size: 2rem; }
-        h2 { border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        ul { padding-left: 20px; }
+        h1, h2 {
+            font-family: 'Belleza', sans-serif;
+            color: #5c815b;
+        }
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+        }
         footer {
             margin-top: 40px;
             padding: 20px 0;
@@ -67,19 +121,39 @@
             color: #5c815b;
             font-family: 'Belleza', sans-serif;
         }
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #5c815b;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 999;
+            font-family: 'Belleza', sans-serif;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <a href="index.html"><img src="images/logo.png" alt="Muna Clinic Logo" class="logo"></a>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Muna Clinic Logo" class="logo" loading="lazy">
+            </a>
         </div>
         <nav>
             <button class="menu-toggle" onclick="toggleMenu()">+</button>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
-                <a href="doctor.html">Doctor</a>
-                <a href="clinic.html">Clinic</a>
+                <a href="about.html">About</a>
+                <a href="doctor.html" class="active">Doctor</a>
                 <a href="research.html">Research</a>
                 <a href="blog.html">Blog</a>
                 <a href="contact.html">Contact</a>
@@ -94,17 +168,20 @@
         <p>That pull toward acute care led me to pursue an <strong>MD in General Practice &amp; Emergency Medicine at BP Koirala Institute of Health Sciences</strong>, which I began in March 2026. Emergency medicine, to me, is the intersection of skill and empathy: knowing what to do and being present for the person in front of you.</p>
         <p>Beyond the wards, I’ve developed a love for research and academic writing. I served as an editorial assistant for the Journal of Gandaki Medical College, published on medical education during COVID-19, and have a manuscript under review on a rare surgical presentation. I’ve also been involved in health camps, global health volunteering, and organizing medical webinars — activities that keep me connected to the bigger picture of public health.</p>
         <p>Outside medicine, I’m a believer in community, clear communication, and the power of a simple explanation. That’s what this website is about, and what Muna Clinic will stand for.</p>
+
         <h2>Current Position</h2>
         <ul>
             <li><strong>MD Resident</strong>, General Practice &amp; Emergency Medicine, BP Koirala Institute of Health Sciences (March 2026 – present)</li>
             <li><strong>Founder</strong>, Muna Clinic Private Limited, Pokhara</li>
         </ul>
+
         <h2>Education</h2>
         <ul>
             <li><strong>MBBS</strong> — Gandaki Medical College, Pokhara (2018–2025) | First Division (68.48%)</li>
             <li><strong>NEB +2</strong> — Capital Secondary School, Kathmandu (2017) | 82.6%</li>
             <li><strong>S.L.C.</strong> — Gandaki Boarding School, Pokhara (2015) | 91.25%</li>
         </ul>
+
         <h2>Clinical Internship</h2>
         <p><em>Gandaki Medical College (August 2024 – August 2025)</em><br>
         Rotations: General Surgery, Neurosurgery, Internal Medicine, Obstetrics &amp; Gynaecology, Emergency, Paediatrics, Orthopaedics</p>
@@ -115,6 +192,7 @@
             <li>Emergency response: CPR, IV access, trauma stabilization</li>
             <li>Multidisciplinary teamwork, case presentations, electronic medical records</li>
         </ul>
+
         <h2>Core Competencies</h2>
         <ul>
             <li>History-taking, clinical evaluation, differential diagnosis</li>
@@ -123,6 +201,7 @@
             <li>Interpretation of ECG, X-ray, ABG, basic lab values</li>
             <li>Patient communication, team collaboration, research writing</li>
         </ul>
+
         <h2>Licensure</h2>
         <ul>
             <li><strong>Registered Doctor</strong> — Nepal Medical Council | Reg. No. 39343</li>
@@ -133,6 +212,8 @@
         <p>&copy; 2026 Muna Clinic Private Limited</p>
     </footer>
 
+    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
     <script>
         function toggleMenu() {
             var nav = document.getElementById("navLinks");
@@ -140,6 +221,14 @@
             var btn = document.querySelector(".menu-toggle");
             btn.textContent = nav.classList.contains("active") ? "✕" : "+";
         }
+        window.onscroll = function() {
+            var btn = document.getElementById('backToTop');
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
     </script>
 </body>
 </html>
